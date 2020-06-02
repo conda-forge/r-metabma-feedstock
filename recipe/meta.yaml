@@ -1,4 +1,4 @@
-{% set version = "0.6.2" %}
+{% set version = "0.6.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,13 +10,13 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/metaBMA_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/metaBMA/metaBMA_{{ version }}.tar.gz
-  sha256: be225f719a3da4c61d91c3442291b819ea61c4a09cdc867b72c0e19cf2bb563c
+  sha256: 02ad1f638d34a935a2bddf0ee3d882c90ebd867201c80bd3a18c2d72c55935e1
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   # r-rstan unavailable on win
-  skip: True  # [win]
-  number: 1
+  skip: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -68,19 +68,11 @@ test:
 about:
   home: https://github.com/danheck/metaBMA
   license: GPL-3
-  summary: Computes the posterior model probabilities for standard meta-analysis models  (null
-    model vs. alternative model assuming either fixed- or random-effects, respectively).
-    These posterior probabilities are used to estimate the overall mean effect size  as
-    the weighted average of the mean effect size estimates of the random- and  fixed-effect
-    model as proposed by Gronau, Van Erp, Heck, Cesario, Jonas, &  Wagenmakers (2017,
-    <doi:10.1080/23743603.2017.1326760>). The user can define  a wide range of non-informative
-    or informative priors for the mean effect size  and the heterogeneity coefficient.
-    Moreover, using pre-compiled Stan models,  meta-analysis with continuous and discrete
-    moderators with Jeffreys-Zellner-Siow (JZS)  priors can be fitted and tested. This
-    allows to compute Bayes factors and  perform Bayesian model averaging across random-
-    and fixed-effects meta-analysis  with and without moderators.
+  summary: Computes the posterior model probabilities for standard meta-analysis models  (null model vs. alternative model assuming either fixed- or random-effects, respectively). These posterior probabilities are used to estimate the overall mean effect size  as the weighted average of the mean effect size estimates of
+    the random- and  fixed-effect model as proposed by Gronau, Van Erp, Heck, Cesario, Jonas, &  Wagenmakers (2017, <doi:10.1080/23743603.2017.1326760>). The user can define  a wide range of non-informative or informative priors for the mean effect size  and the heterogeneity coefficient. Moreover, using pre-compiled Stan
+    models,  meta-analysis with continuous and discrete moderators with Jeffreys-Zellner-Siow (JZS)  priors can be fitted and tested. This allows to compute Bayes factors and  perform Bayesian model averaging across random- and fixed-effects meta-analysis  with and without moderators.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
