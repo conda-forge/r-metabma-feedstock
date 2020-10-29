@@ -14,8 +14,6 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  # r-rstan unavailable on win
-  skip: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -60,6 +58,7 @@ requirements:
     - r-rstan >=2.18.1
     - r-rstantools >=1.5.1
 
+
 test:
   commands:
     - $R -e "library('metaBMA')"           # [not win]
@@ -67,12 +66,13 @@ test:
 
 about:
   home: https://github.com/danheck/metaBMA
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Computes the posterior model probabilities for standard meta-analysis models  (null model vs. alternative model assuming either fixed- or random-effects, respectively). These posterior probabilities are used to estimate the overall mean effect size  as the weighted average of the mean effect size estimates of
     the random- and  fixed-effect model as proposed by Gronau, Van Erp, Heck, Cesario, Jonas, &  Wagenmakers (2017, <doi:10.1080/23743603.2017.1326760>). The user can define  a wide range of non-informative or informative priors for the mean effect size  and the heterogeneity coefficient. Moreover, using pre-compiled Stan
     models,  meta-analysis with continuous and discrete moderators with Jeffreys-Zellner-Siow (JZS)  priors can be fitted and tested. This allows to compute Bayes factors and  perform Bayesian model averaging across random- and fixed-effects meta-analysis  with and without moderators.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
