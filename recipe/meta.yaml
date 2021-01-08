@@ -1,4 +1,4 @@
-{% set version = "0.6.5" %}
+{% set version = "0.6.6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/metaBMA_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/metaBMA/metaBMA_{{ version }}.tar.gz
-  sha256: a31036eb392746e0becb2a51ef14f8e7779484abd0bda96496eb131b85eda5bb
+  sha256: df2d4f83d6331673ffe9987dc24d9ec46ccda854b8157d897cf0463acdcc7bf7
 
 build:
   merge_build_host: true  # [win]
