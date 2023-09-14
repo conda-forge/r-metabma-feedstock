@@ -28,38 +28,45 @@ requirements:
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
-    - {{ posix }}make
     - {{ posix }}sed               # [win]
+    - {{ posix }}grep              # [win]
+    - {{ posix }}autoconf
+    - {{ posix }}automake          # [not win]
+    - {{ posix }}automake-wrapper  # [win]
+    - {{ posix }}pkg-config
+    - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-bh >=1.69.0_1
+    - r-bh >=1.78.0
     - r-laplacesdemon
     - r-rcpp >=1.0.0
-    - r-rcppeigen >=0.3.3.5.0
-    - r-stanheaders >=2.18.0
+    - r-rcppeigen >=0.3.3.9.1
+    - r-rcppparallel >=5.0.1
+    - r-stanheaders >=2.26.0
     - r-bridgesampling
     - r-coda
     - r-logspline
     - r-mvtnorm
-    - r-rstan >=2.18.1
-    - r-rstantools >=1.5.1
+    - r-rstan >=2.26.0
+    - r-rstantools >=2.3.0
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-bh >=1.69.0_1
+    #- r-bh >=1.78.0
     - r-laplacesdemon
     - r-rcpp >=1.0.0
-    - r-rcppeigen >=0.3.3.5.0
-    - r-stanheaders >=2.18.0
+    - r-rcppeigen >=0.3.3.9.1
+    - r-rcppparallel >=5.0.1
+    #- r-stanheaders >=2.26.0
     - r-bridgesampling
     - r-coda
     - r-logspline
     - r-mvtnorm
-    - r-rstan >=2.18.1
-    - r-rstantools >=1.5.1
-
+    - r-rstan >=2.26.0
+    - r-rstantools >=2.3.0
 
 test:
   commands:
