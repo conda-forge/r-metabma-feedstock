@@ -3,6 +3,7 @@ About r-metabma-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-metabma-feedstock/blob/main/LICENSE.txt)
 
+
 About r-metabma
 ---------------
 
@@ -11,6 +12,7 @@ Home: https://github.com/danheck/metaBMA
 Package license: GPL-3.0-only
 
 Summary: Computes the posterior model probabilities for standard meta-analysis models  (null model vs. alternative model assuming either fixed- or random-effects, respectively). These posterior probabilities are used to estimate the overall mean effect size  as the weighted average of the mean effect size estimates of the random- and  fixed-effect model as proposed by Gronau, Van Erp, Heck, Cesario, Jonas, &  Wagenmakers (2017, <doi:10.1080/23743603.2017.1326760>). The user can define  a wide range of non-informative or informative priors for the mean effect size  and the heterogeneity coefficient. Moreover, using pre-compiled Stan models,  meta-analysis with continuous and discrete moderators with Jeffreys-Zellner-Siow (JZS)  priors can be fitted and tested. This allows to compute Bayes factors and  perform Bayesian model averaging across random- and fixed-effects meta-analysis  with and without moderators.
+
 About r-metabma
 ---------------
 
